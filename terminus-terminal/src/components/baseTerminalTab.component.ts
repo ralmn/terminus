@@ -348,8 +348,10 @@ export class BaseTerminalTabComponent extends BaseTabComponent implements OnInit
     }
 
     zoomOut () {
-        this.zoom--
-        this.frontend.setZoom(this.zoom)
+        if(this.zoom > -20){
+            this.zoom--
+            this.frontend.setZoom(this.zoom)
+        }
     }
 
     resetZoom () {
